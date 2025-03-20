@@ -20,12 +20,26 @@ class LinhaPrincipal extends StatelessWidget {
         largura < 750
             ? largura * 0.8
             : largura > 750 && largura < 1000
-            ? largura * 0.6
+            ? largura * 0.7
             : largura * 0.5;
+
+    final double tamanhoFonte =
+        largura < 750
+            ? (largura / 40)
+            : largura > 700 && largura < 1000
+            ? (largura / 60)
+            : (largura / 80);
+
+    final double tamanhoFonte2 =
+        largura < 750
+            ? (largura / 50)
+            : largura > 750 && largura < 1000
+            ? (largura / 75)
+            : (largura / 90);
 
     if (largura < 700) {
       final double raioFoto = largura / 10;
-      final double tamanhoFonte = largura / 50;
+
       final TextAlign alinhamento = TextAlign.center;
       return Center(
         child: Cartao(
@@ -39,7 +53,7 @@ class LinhaPrincipal extends StatelessWidget {
               children: [
                 Texto(
                   texto: 'Sobre Mim',
-                  tamanho: largura / 40,
+                  tamanho: tamanhoFonte,
                   alinhamento: alinhamento,
                   peso: FontWeight.bold,
                 ),
@@ -52,19 +66,19 @@ class LinhaPrincipal extends StatelessWidget {
                 SizedBox(height: largura * 0.02),
                 Texto(
                   texto: 'Olá, sou Isac Maximo',
-                  tamanho: tamanhoFonte,
+                  tamanho: tamanhoFonte2,
                   alinhamento: alinhamento,
                   peso: peso,
                 ),
                 Texto(
                   texto: 'Desenvolvedor Mobile',
-                  tamanho: tamanhoFonte,
+                  tamanho: tamanhoFonte2,
                   alinhamento: alinhamento,
                   peso: peso,
                 ),
                 Texto(
                   texto: '3+ anos de experiência',
-                  tamanho: tamanhoFonte,
+                  tamanho: tamanhoFonte2,
                   alinhamento: alinhamento,
                   peso: peso,
                 ),
@@ -75,7 +89,6 @@ class LinhaPrincipal extends StatelessWidget {
       );
     } else {
       final double raioFoto = largura / 25;
-      final double tamanhoFonte = largura / 80;
       final TextAlign alinhamento = TextAlign.center;
       return Center(
         child: Cartao(
@@ -86,7 +99,7 @@ class LinhaPrincipal extends StatelessWidget {
             children: [
               Texto(
                 texto: 'Sobre Mim',
-                tamanho: largura / 70,
+                tamanho: tamanhoFonte,
                 alinhamento: alinhamento,
                 peso: FontWeight.bold,
               ),
@@ -106,18 +119,18 @@ class LinhaPrincipal extends StatelessWidget {
                     children: [
                       Texto(
                         texto: 'Olá, sou Isac Maximo',
-                        tamanho: tamanhoFonte,
+                        tamanho: tamanhoFonte2,
                         peso: peso,
                       ),
 
                       Texto(
                         texto: 'Desenvolvedor Mobile',
-                        tamanho: tamanhoFonte,
+                        tamanho: tamanhoFonte2,
                         peso: peso,
                       ),
                       Texto(
                         texto: '3+ anos de experiência',
-                        tamanho: tamanhoFonte,
+                        tamanho: tamanhoFonte2,
                         peso: peso,
                       ),
                     ],

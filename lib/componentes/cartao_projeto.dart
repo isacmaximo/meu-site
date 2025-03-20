@@ -39,7 +39,7 @@ class CartaoProjeto extends StatelessWidget {
         largura < 750
             ? Size(largura * 0.25, altura * 0.04)
             : largura > 750 && largura < 1000
-            ? (Size(largura * 0.2, altura * 0.045))
+            ? (Size(largura * 0.2, altura * 0.05))
             : (Size(largura * 0.15, altura * 0.06));
     return Center(
       child: Cartao(

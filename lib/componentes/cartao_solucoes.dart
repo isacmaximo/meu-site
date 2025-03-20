@@ -27,7 +27,7 @@ class CartaoSolucoes extends StatelessWidget {
         largura < 750
             ? largura * 0.8
             : largura > 750 && largura < 1000
-            ? largura * 0.6
+            ? largura * 0.7
             : largura * 0.5;
     return Center(
       child: Cartao(
