@@ -28,6 +28,13 @@ class EduChatPage extends StatelessWidget {
                   ? (largura / 60)
                   : (largura / 80);
 
+          final double larguraCartao =
+              largura < 750
+                  ? largura * 0.8
+                  : largura > 750 && largura < 1000
+                  ? largura * 0.7
+                  : largura * 0.5;
+
           return RawScrollbar(
             thumbVisibility: true,
             trackVisibility: true,
@@ -41,7 +48,7 @@ class EduChatPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Cartao(
-                      largura: largura < 750 ? largura * 0.9 : largura * 0.5,
+                      largura: larguraCartao,
                       espacamento: EdgeInsets.zero,
                       filho: ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -50,7 +57,7 @@ class EduChatPage extends StatelessWidget {
                     ),
                     SizedBox(height: altura * 0.05),
                     Cartao(
-                      largura: largura < 750 ? largura * 0.9 : largura * 0.5,
+                      largura: larguraCartao,
                       espacamento: EdgeInsets.all(
                         largura < 750 ? largura * 0.01 : largura * 0.02,
                       ),
