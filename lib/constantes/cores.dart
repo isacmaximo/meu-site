@@ -11,3 +11,12 @@ const Color corEduChat2 = Color.fromRGBO(23, 29, 36, 1);
 
 const Color corSimplePDF1 = Color.fromRGBO(163, 198, 83, 1);
 const Color corSimplePDF2 = Color.fromRGBO(51, 51, 51, 1);
+
+final List<Color> gradientePrincipal = [
+  Colors.purple.shade900,
+  Colors.deepPurple.shade900,
+  Colors.indigo.shade900,
+];
+final List<Color> gradienteEduChat = [corEduChat1, corEduChat2];
+
+final List<Color> gradienteSimplePdf = [corSimplePDF1, corSimplePDF2];

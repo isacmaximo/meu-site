@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meu_site/componentes/botao_elevado.dart';
 import 'package:meu_site/componentes/cartao.dart';
 import 'package:meu_site/componentes/texto.dart';
+import 'package:meu_site/constantes/cores.dart';
 
 class CartaoProjeto extends StatelessWidget {
   final double largura;
@@ -67,7 +68,29 @@ class CartaoProjeto extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    BotaoElevado(
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[800],
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                      ),
+                      child: TextButton(
+                        onPressed: funcaoBotao,
+
+                        style: ButtonStyle(
+                          foregroundColor: WidgetStateProperty.all(corFonte),
+                          textStyle: WidgetStateProperty.all(
+                            TextStyle(
+                              fontFamily: 'Nunito',
+
+                              fontSize: tamanhoFonte2,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        child: Texto(texto: 'Conheça mais sobre $titulo'),
+                      ),
+                    ),
+                    /*BotaoElevado(
                       backgroundColor: corBotao,
                       funcao: funcaoBotao,
                       filho: Texto(
@@ -77,7 +100,7 @@ class CartaoProjeto extends StatelessWidget {
                       ),
                       largura: tamanhoBotao.width,
                       altura: tamanhoBotao.height,
-                    ),
+                    ),*/
                   ],
                 ),
               ],

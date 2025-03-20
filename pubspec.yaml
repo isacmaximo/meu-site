@@ -9,8 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: ^6.2.1
-  video_player: ^2.9.3
 
 dev_dependencies:
   flutter_test:
@@ -23,7 +21,6 @@ flutter:
   assets:
     - assets/eu.jpeg
     - assets/educhat.gif
-    - assets/educhat.mp4
     
   
   fonts:

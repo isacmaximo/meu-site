@@ -7,6 +7,7 @@ class Texto extends StatelessWidget {
   final FontWeight? peso;
   final TextAlign? alinhamento;
   final String? fontFamily;
+  final TextDecoration? decoracao;
 
   const Texto({
     super.key,
@@ -16,6 +17,7 @@ class Texto extends StatelessWidget {
     this.peso,
     this.alinhamento,
     this.fontFamily,
+    this.decoracao,
   });
 
   @override
@@ -28,6 +30,7 @@ class Texto extends StatelessWidget {
         fontSize: tamanho,
         fontWeight: peso,
         fontFamily: fontFamily,
+        decoration: decoracao,
       ),
     );
   }
