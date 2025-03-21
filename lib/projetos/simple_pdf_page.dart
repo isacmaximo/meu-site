@@ -7,8 +7,8 @@ import 'package:meu_site/componentes/texto.dart';
 import 'package:meu_site/componentes/titulo_descricao.dart';
 import 'package:meu_site/constantes/cores.dart';
 
-class EduChatPage extends StatelessWidget {
-  const EduChatPage({super.key});
+class SimplePdfPage extends StatelessWidget {
+  const SimplePdfPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class EduChatPage extends StatelessWidget {
             thumbColor: corSimplePDF2,
             controller: scrollController,
             child: FundoGradiente(
-              cores: gradienteEduChat,
+              cores: gradienteSimplePdf,
               inicio: Alignment.topCenter,
               fim: Alignment.bottomCenter,
               filho: SingleChildScrollView(
@@ -60,7 +60,7 @@ class EduChatPage extends StatelessWidget {
                         espacamento: EdgeInsets.zero,
                         filho: ClipRRect(
                           borderRadius: BorderRadius.all(Radius.circular(10)),
-                          child: Image.asset('assets/educhat.gif'),
+                          child: Image.asset('assets/simplepdf.gif'),
                         ),
                       ),
                       SizedBox(height: altura * 0.05),
@@ -79,80 +79,68 @@ class EduChatPage extends StatelessWidget {
                             children: [
                               TituloDescricao(
                                 artigo: 'O ',
-                                titulo: 'Edu Chat ',
+                                titulo: 'Simple PDF ',
                                 descricao:
-                                    'é um aplicativo mobile desenvolvido para '
-                                    'auxiliar estudantes e qualquer pessoa'
-                                    ' interessada em aprender e pesquisar sobre'
-                                    ' diversos temas. Com uma interface intuitiva'
-                                    ' e moderna, o Edu Chat oferece as seguintes'
-                                    ' funcionalidades:',
+                                    'é um aplicativo leitor de arquivos PDF '
+                                    'projetado para oferecer uma experiência'
+                                    ' de leitura simples e eficiente. Com um'
+                                    ' design minimalista e funcionalidades'
+                                    ' essenciais, o Simple PDF permite:',
                                 tamanho: tamanhoFonte,
                                 espacamentoEmBaixo: espacamentoEmBaixo,
                               ),
                               TituloDescricao(
                                 artigo: '\u2022 ',
-                                titulo: 'Pesquisa por Texto: ',
+                                titulo: 'Leitura Simples: ',
                                 descricao:
-                                    'Basta digitar o tema desejado para receber'
-                                    ' um resumo conciso, sugestões de livros,'
-                                    ' artigos e sites relevantes.',
+                                    'Abra e visualize seus arquivos PDF de'
+                                    ' forma rápida e fácil.',
                                 tamanho: tamanhoFonte,
                                 espacamentoEmBaixo: espacamentoEmBaixo,
                               ),
                               TituloDescricao(
                                 artigo: '\u2022 ',
-                                titulo: 'Pesquisa por Imagem: ',
+                                titulo: 'Tema Escuro: ',
                                 descricao:
-                                    'Utilize a câmera ou a galeria do seu dispositivo para'
-                                    ' escolher uma imagem com conteúdo textual, e o Edu Chat fará'
-                                    ' a pesquisa por você.',
+                                    'Ative o tema escuro para uma leitura mais'
+                                    ' confortável em ambientes com pouca luz.',
                                 tamanho: tamanhoFonte,
                                 espacamentoEmBaixo: espacamentoEmBaixo,
                               ),
                               TituloDescricao(
                                 artigo: '\u2022 ',
-                                titulo: 'Resumos Inteligentes: ',
+                                titulo: 'Mudar Idioma: ',
                                 descricao:
-                                    'Obtenha rapidamente informações essenciais'
-                                    ' sobre o tema pesquisado.',
+                                    'Personalize o idioma do aplicativo de'
+                                    ' acordo com sua preferência.',
                                 tamanho: tamanhoFonte,
                                 espacamentoEmBaixo: espacamentoEmBaixo,
                               ),
                               TituloDescricao(
                                 artigo: '\u2022 ',
-                                titulo: 'Indicação de Livros: ',
+                                titulo: 'Navegação Simples: ',
                                 descricao:
-                                    'Descubra obras literárias que aprofundam o'
-                                    ' seu conhecimento.',
+                                    'Navegue diretamente para a página'
+                                    ' desejada informando o número.',
                                 tamanho: tamanhoFonte,
                                 espacamentoEmBaixo: espacamentoEmBaixo,
                               ),
                               TituloDescricao(
                                 artigo: '\u2022 ',
-                                titulo: 'Sugestões de Artigos: ',
+                                titulo: 'Compartilhar PDF: ',
                                 descricao:
-                                    'Explore artigos científicos e acadêmicos'
-                                    ' para uma pesquisa mais completa.',
+                                    'Compartilhe seus arquivos PDF com outros'
+                                    ' aplicativos e contatos.',
                                 tamanho: tamanhoFonte,
                                 espacamentoEmBaixo: espacamentoEmBaixo,
                               ),
-                              TituloDescricao(
-                                artigo: '\u2022 ',
-                                titulo: 'Susgestões de sites: ',
-                                descricao:
-                                    'Acesse fontes online para'
-                                    ' expandir seus estudos.',
-                                tamanho: tamanhoFonte,
-                                espacamentoEmBaixo: espacamentoEmBaixo,
-                              ),
+
                               Texto(
                                 texto:
-                                    'O Edu Chat foi desenvolvido com o objetivo '
-                                    'de tornar o aprendizado mais acessível e '
-                                    'eficiente, fornecendo as ferramentas'
-                                    ' necessárias para uma pesquisa de qualidade'
-                                    ' em um único lugar.',
+                                    'O Simple PDF é a solução ideal para quem'
+                                    ' busca um leitor de PDF leve, rápido e'
+                                    ' com as funcionalidades mais importantes'
+                                    ' para o dia a dia.',
                                 peso: FontWeight.w300,
                                 tamanho: tamanhoFonte,
                               ),
@@ -162,14 +150,14 @@ class EduChatPage extends StatelessWidget {
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(
-                                      color: corEduChat1,
+                                      color: corSimplePDF1,
                                       borderRadius: BorderRadius.all(
                                         Radius.circular(10),
                                       ),
                                     ),
                                     child: TextButton(
                                       onPressed: () {
-                                        context.go('/educhat/politicas');
+                                        context.go('/simplepdf/politicas');
                                       },
                                       style: ButtonStyle(
                                         foregroundColor:

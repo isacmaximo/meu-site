@@ -3,7 +3,16 @@ import 'package:flutter/material.dart';
 class FundoGradiente extends StatelessWidget {
   final Widget filho;
   final List<Color>? cores;
-  const FundoGradiente({super.key, required this.filho, this.cores});
+  final AlignmentGeometry? inicio;
+  final AlignmentGeometry? fim;
+
+  const FundoGradiente({
+    super.key,
+    required this.filho,
+    this.cores,
+    this.inicio,
+    this.fim,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +24,8 @@ class FundoGradiente extends StatelessWidget {
       height: altura,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: inicio ?? Alignment.topLeft,
+          end: fim ?? Alignment.bottomRight,
           colors:
               cores ??
               [

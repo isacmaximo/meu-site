@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:meu_site/principal/pagina_principal.dart';
+import 'package:meu_site/routes/routes.dart';
 import 'package:meu_site/temas/tema_principal.dart';
 
 void main() {
@@ -13,8 +14,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      routerConfig: router,
       theme: TemaPrincipal.lightTheme,
       scrollBehavior: MaterialScrollBehavior().copyWith(
         dragDevices: {
@@ -24,7 +26,6 @@ class MainApp extends StatelessWidget {
           PointerDeviceKind.unknown,
         },
       ),
-      home: PaginaPrincipal(),
     );
   }
 }

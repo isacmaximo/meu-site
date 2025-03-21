@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meu_site/componentes/botao_elevado.dart';
 import 'package:meu_site/componentes/cartao.dart';
 import 'package:meu_site/componentes/texto.dart';
 import 'package:meu_site/constantes/cores.dart';
@@ -11,6 +10,7 @@ class CartaoProjeto extends StatelessWidget {
   final String descricao;
   final Color? corBotao;
   final void Function()? funcaoBotao;
+  final String tituloBotao;
   const CartaoProjeto({
     super.key,
     required this.largura,
@@ -19,29 +19,20 @@ class CartaoProjeto extends StatelessWidget {
     required this.descricao,
     this.corBotao,
     this.funcaoBotao,
+    required this.tituloBotao,
   });
 
   @override
   Widget build(BuildContext context) {
     FontWeight peso = FontWeight.w300;
-    final double tamanhoFonte =
-        largura < 750
-            ? (largura / 40)
-            : largura > 700 && largura < 1000
-            ? (largura / 60)
-            : (largura / 80);
+
     final double tamanhoFonte2 =
         largura < 750
             ? (largura / 50)
             : largura > 750 && largura < 1000
             ? (largura / 75)
             : (largura / 90);
-    final Size tamanhoBotao =
-        largura < 750
-            ? Size(largura * 0.25, altura * 0.04)
-            : largura > 750 && largura < 1000
-            ? (Size(largura * 0.2, altura * 0.05))
-            : (Size(largura * 0.15, altura * 0.06));
+
     return Center(
       child: Cartao(
         elevacao: 2,
@@ -52,11 +43,7 @@ class CartaoProjeto extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Texto(
-                  texto: titulo,
-                  tamanho: tamanhoFonte,
-                  peso: FontWeight.bold,
-                ),
+                Texto(texto: titulo, tamanho: tamanhoFonte2, peso: peso),
                 SizedBox(height: altura * 0.01),
                 Texto(
                   texto: descricao,
@@ -87,20 +74,9 @@ class CartaoProjeto extends StatelessWidget {
                             ),
                           ),
                         ),
-                        child: Texto(texto: 'Conheça mais sobre $titulo'),
+                        child: Texto(texto: tituloBotao),
                       ),
                     ),
-                    /*BotaoElevado(
-                      backgroundColor: corBotao,
-                      funcao: funcaoBotao,
-                      filho: Texto(
-                        texto: 'Conheça mais sobre $titulo',
-                        peso: FontWeight.bold,
-                        tamanho: tamanhoFonte2,
-                      ),
-                      largura: tamanhoBotao.width,
-                      altura: tamanhoBotao.height,
-                    ),*/
                   ],
                 ),
               ],

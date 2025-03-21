@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meu_site/componentes/cartao.dart';
+import 'package:meu_site/componentes/linha_principal.dart';
 import 'package:meu_site/componentes/texto.dart';
-import 'package:meu_site/constantes/cores.dart';
 
 class CartaoSolucoes extends StatelessWidget {
   final double largura;
@@ -40,12 +40,21 @@ class CartaoSolucoes extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Texto(
+                texto: 'Sobre Mim',
+                tamanho: tamanhoFonte,
+                alinhamento: alinhamento,
+                peso: FontWeight.bold,
+              ),
+              SizedBox(height: altura * 0.02),
+              LinhaPrincipal(largura: largura, altura: altura),
+              SizedBox(height: altura * 0.02),
+              Texto(
                 texto: 'Soluções Desenvolvidas',
                 tamanho: tamanhoFonte,
                 alinhamento: alinhamento,
                 peso: FontWeight.bold,
               ),
-              Divider(color: corFonte, thickness: 0.5, height: altura * 0.02),
+              SizedBox(height: altura * 0.02),
               filho,
             ],
           ),

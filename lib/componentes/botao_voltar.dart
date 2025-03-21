@@ -19,7 +19,7 @@ class BotaoVoltar extends StatelessWidget {
             style: ButtonStyle(
               foregroundColor: WidgetStateProperty.all(corFonte),
             ),
-            child: Texto(texto: 'Home', tamanho: tamanhoFonte),
+            child: Texto(texto: 'Voltar', tamanho: tamanhoFonte),
           ),
         ],
       ),

@@ -17,6 +17,16 @@ final List<Color> gradientePrincipal = [
   Colors.deepPurple.shade900,
   Colors.indigo.shade900,
 ];
-final List<Color> gradienteEduChat = [corEduChat1, corEduChat2];
+final List<Color> gradienteEduChat = [
+  corEduChat1.withAlpha(255),
+  corEduChat1.withAlpha(200),
+  corEduChat1.withAlpha(150),
+  corEduChat1.withAlpha(100),
+];
 
-final List<Color> gradienteSimplePdf = [corSimplePDF1, corSimplePDF2];
+final List<Color> gradienteSimplePdf = [
+  corSimplePDF1.withAlpha(255),
+  corSimplePDF1.withAlpha(200),
+  corSimplePDF1.withAlpha(150),
+  corSimplePDF1.withAlpha(100),
+];

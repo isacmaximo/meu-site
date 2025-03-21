@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:meu_site/componentes/cartao.dart';
 import 'package:meu_site/componentes/texto.dart';
 import 'package:meu_site/constantes/cores.dart';
@@ -16,19 +17,6 @@ class LinhaPrincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FontWeight peso = FontWeight.w300;
-    final double larguraCartao =
-        largura < 750
-            ? largura * 0.8
-            : largura > 750 && largura < 1000
-            ? largura * 0.7
-            : largura * 0.5;
-
-    final double tamanhoFonte =
-        largura < 750
-            ? (largura / 40)
-            : largura > 700 && largura < 1000
-            ? (largura / 60)
-            : (largura / 80);
 
     final double tamanhoFonte2 =
         largura < 750
@@ -43,7 +31,6 @@ class LinhaPrincipal extends StatelessWidget {
       final TextAlign alinhamento = TextAlign.center;
       return Center(
         child: Cartao(
-          largura: larguraCartao,
           elevacao: 2,
           espacamento: EdgeInsets.all(largura * 0.02),
           filho: Center(
@@ -51,13 +38,6 @@ class LinhaPrincipal extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Texto(
-                  texto: 'Sobre Mim',
-                  tamanho: tamanhoFonte,
-                  alinhamento: alinhamento,
-                  peso: FontWeight.bold,
-                ),
-                Divider(color: corFonte, thickness: 0.5, height: altura * 0.02),
                 SizedBox(height: altura * 0.02),
                 CircleAvatar(
                   radius: raioFoto,
@@ -82,6 +62,49 @@ class LinhaPrincipal extends StatelessWidget {
                   alinhamento: alinhamento,
                   peso: peso,
                 ),
+                SizedBox(height: altura * 0.02),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Texto(
+                      texto: 'Entre em contato pelo e-mail:',
+                      tamanho: tamanhoFonte2,
+                      peso: peso,
+                    ),
+                    SizedBox(width: largura * 0.01),
+                    TextButton(
+                      onPressed: () async {
+                        await Clipboard.setData(
+                          ClipboardData(text: 'isacmaximo@gmail.com'),
+                        );
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              duration: Duration(milliseconds: 850),
+                              content: Texto(
+                                texto:
+                                    'E-mail copiado para área de transferência',
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                      style: ButtonStyle(
+                        visualDensity: VisualDensity.compact,
+                        foregroundColor: WidgetStateProperty.all(corFonte),
+                        textStyle: WidgetStateProperty.all(
+                          TextStyle(
+                            fontFamily: 'Nunito',
+                            fontSize: tamanhoFonte2,
+                            fontWeight: peso,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                      child: Texto(texto: 'isacmaximo@gmail.com'),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -89,21 +112,13 @@ class LinhaPrincipal extends StatelessWidget {
       );
     } else {
       final double raioFoto = largura / 25;
-      final TextAlign alinhamento = TextAlign.center;
       return Center(
         child: Cartao(
-          largura: larguraCartao,
           elevacao: 2,
           espacamento: EdgeInsets.all(largura * 0.01),
           filho: Column(
             children: [
-              Texto(
-                texto: 'Sobre Mim',
-                tamanho: tamanhoFonte,
-                alinhamento: alinhamento,
-                peso: FontWeight.bold,
-              ),
-              Divider(color: corFonte, thickness: 0.5, height: altura * 0.02),
+              //Divider(color: corFonte, thickness: 0.5, height: altura * 0.02),
               SizedBox(height: altura * 0.02),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -137,7 +152,49 @@ class LinhaPrincipal extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: altura * 0.01),
+              SizedBox(height: altura * 0.02),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Texto(
+                    texto: 'Entre em contato pelo e-mail:',
+                    tamanho: tamanhoFonte2,
+                    peso: peso,
+                  ),
+                  SizedBox(width: largura * 0.01),
+                  TextButton(
+                    onPressed: () async {
+                      await Clipboard.setData(
+                        ClipboardData(text: 'isacmaximo@gmail.com'),
+                      );
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            duration: Duration(milliseconds: 850),
+                            content: Texto(
+                              texto:
+                                  'E-mail copiado para área de transferência',
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                    style: ButtonStyle(
+                      visualDensity: VisualDensity.compact,
+                      foregroundColor: WidgetStateProperty.all(corFonte),
+                      textStyle: WidgetStateProperty.all(
+                        TextStyle(
+                          fontFamily: 'Nunito',
+                          fontSize: tamanhoFonte2,
+                          fontWeight: peso,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                    child: Texto(texto: 'isacmaximo@gmail.com'),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
